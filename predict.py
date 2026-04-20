@@ -8,21 +8,29 @@ and provides a function to predict production delays based on input features.
 import joblib
 import pandas as pd
 from typing import Dict
+import os
+
+# Import feature engineering function for unpickling the model
+from feature_engineering import add_features  # noqa: F401
 
 
-
-# Feature engineering function used during training
-def add_features(X):
-    """Apply feature engineering transformations to input data."""
-    X = X.copy()
-    # Interaction feature
-    X['Downtime_x_Defects'] = X['Machine_Downtime'] * X['Defect_Count']
-    return X
+# Lazy load the trained model and metadata
+_model = None
+_metadata = None
 
 
-# Load the trained model and metadata
-model = joblib.load("model.pkl")
-metadata = joblib.load("model_meta.pkl")
+def _load_model_and_metadata():
+    """Load model and metadata on first use."""
+    global _model, _metadata
+    if _model is None or _metadata is None:
+        # Get the directory of the current script
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        model_path = os.path.join(script_dir, "model.pkl")
+        metadata_path = os.path.join(script_dir, "model_meta.pkl")
+        
+        _model = joblib.load(model_path)
+        _metadata = joblib.load(metadata_path)
+    return _model, _metadata
 
 
 def predict_delay(input_data: Dict) -> float:
@@ -40,6 +48,9 @@ def predict_delay(input_data: Dict) -> float:
     Raises:
         KeyError: If required features from training are missing in input_data.
     """
+    # Load model and metadata on first use
+    model, metadata = _load_model_and_metadata()
+    
     # Extract feature names from metadata
     feature_names = metadata["features"]
 

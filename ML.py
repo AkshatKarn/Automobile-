@@ -8,6 +8,10 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import FunctionTransformer
 
+def add_features(X):
+    X = X.copy()
+    X['Downtime_x_Defects'] = X['Machine_Downtime'] * X['Defect_Count']
+    return X
 # -------------------------------
 # 1. LOAD DATA
 # -------------------------------
