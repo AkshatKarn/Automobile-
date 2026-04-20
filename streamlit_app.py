@@ -38,13 +38,15 @@ if st.session_state.theme == 'dark':
 <style>
     /* Professional industrial factory floor background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
                     url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=2000&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
         min-height: 100vh;
+        padding-top: 0 !important;
+        margin-top: 0 !important;
     }
     
     /* Main content styling */
