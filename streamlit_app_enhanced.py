@@ -38,7 +38,8 @@ if st.session_state.theme == 'dark':
 <style>
     /* Professional industrial factory floor background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background-image: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=2000&q=80');
+        background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                    url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=2000&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -46,22 +47,9 @@ if st.session_state.theme == 'dark':
         min-height: 100vh;
     }
     
-    /* Lighter overlay for better text visibility */
-    [data-testid="stAppViewContainer"]::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.35);
-        z-index: 1;
-    }
-    
-    /* Main content on top of overlay */
+    /* Main content styling */
     [data-testid="stMainBlockContainer"] {
         position: relative;
-        z-index: 2;
     }
     
     /* Sidebar styling */
@@ -422,18 +410,11 @@ else:  # Light theme
     /* Light theme background */
     [data-testid="stAppViewContainer"] {
         background-color: #f5f5f5;
-        background-image: none;
-    }
-    
-    [data-testid="stAppViewContainer"]::before {
-        content: none;
-        display: none;
     }
     
     /* Main content */
     [data-testid="stMainBlockContainer"] {
         position: relative;
-        z-index: 2;
     }
     
     /* Sidebar styling - Light theme */
