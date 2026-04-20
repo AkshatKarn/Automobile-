@@ -38,8 +38,7 @@ if st.session_state.theme == 'dark':
 <style>
     /* Professional industrial factory floor background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), 
-                    url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=2000&q=80');
+        background: url('https://images.unsplash.com/photo-1513828583688-c52646db42da?w=2000&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -47,6 +46,18 @@ if st.session_state.theme == 'dark':
         min-height: 100vh;
         padding-top: 0 !important;
         margin-top: 0 !important;
+    }
+    
+    /* Hide the top toolbar strip */
+    [data-testid="stAppHeader"] {
+        display: none !important;
+        visibility: hidden !important;
+    }
+    
+    /* Hide decorative top bar */
+    .stAppToolbar {
+        display: none !important;
+        visibility: hidden !important;
     }
     
     /* Main content styling */
