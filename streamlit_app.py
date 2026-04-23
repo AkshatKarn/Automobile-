@@ -38,9 +38,8 @@ if st.session_state.theme == 'dark':
 <style>
     /* Professional industrial factory floor background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background-color: #1a1a1a;
-        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
-                          url('https://images.unsplash.com/photo-1578974719658-0f30ff786124?w=2000&q=80');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                          url('https://images.unsplash.com/photo-1543269865-cbdf26effbad?w=2000&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
