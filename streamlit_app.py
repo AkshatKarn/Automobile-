@@ -36,13 +36,30 @@ st.set_page_config(
 if st.session_state.theme == 'dark':
     st.markdown("""
 <style>
-    /* Professional industrial gradient background - DARK THEME */
+    /* Professional industrial image background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #0a0f1f 0%, #1a2a4a 25%, #0d1628 50%, #1a3a5a 75%, #0a0f1f 100%);
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="g1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:rgba(255,165,0,0.15)"/><stop offset="100%" style="stop-color:rgba(26,58,90,0.2)"/></linearGradient></defs><rect width="1200" height="800" fill="url(%23g1)"/></svg>'), url('app/static/manufacturing_bg.jpg');
+        background-size: cover;
+        background-position: center;
         background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
         min-height: 100vh;
         padding-top: 0 !important;
         margin-top: 0 !important;
+    }
+    
+    /* Fallback gradient if image doesn't load */
+    [data-testid="stAppViewContainer"]::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(10, 15, 31, 0.3) 0%, rgba(26, 42, 74, 0.3) 25%, rgba(13, 22, 40, 0.3) 50%, rgba(26, 58, 90, 0.3) 75%, rgba(10, 15, 31, 0.3) 100%);
+        pointer-events: none;
+        z-index: -1;
     }
     
     /* Hide the top toolbar strip */
