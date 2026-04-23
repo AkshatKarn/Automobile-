@@ -36,14 +36,14 @@ st.set_page_config(
 if st.session_state.theme == 'dark':
     st.markdown("""
 <style>
-    /* Professional warehouse background - DARK THEME */
+    /* Professional industrial machinery background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background-image: url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=2000&q=80');
+        background-image: url('https://images.unsplash.com/photo-1513665641917-a6ba36818fe2?w=2000&q=80');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
         background-repeat: no-repeat;
-        background-color: #001a4d;
+        background-color: #0a0a0a;
         min-height: 100vh;
         padding-top: 0 !important;
         margin-top: 0 !important;
@@ -57,7 +57,7 @@ if st.session_state.theme == 'dark':
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(180deg, rgba(0, 26, 77, 0.5) 0%, rgba(0, 61, 153, 0.4) 100%);
+        background: linear-gradient(180deg, rgba(10, 10, 10, 0.5) 0%, rgba(20, 20, 40, 0.4) 100%);
         z-index: 1;
         pointer-events: none;
     }
