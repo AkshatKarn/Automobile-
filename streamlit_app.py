@@ -38,10 +38,33 @@ if st.session_state.theme == 'dark':
 <style>
     /* Professional warehouse background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(180deg, #001a4d 0%, #003d99 25%, #001a4d 50%, #003d99 75%, #001a4d 100%);
+        background-image: url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=2000&q=80');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-color: #001a4d;
         min-height: 100vh;
         padding-top: 0 !important;
         margin-top: 0 !important;
+    }
+    
+    /* Dark overlay for better text visibility */
+    [data-testid="stAppViewContainer"]::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(180deg, rgba(0, 26, 77, 0.5) 0%, rgba(0, 61, 153, 0.4) 100%);
+        z-index: 1;
+        pointer-events: none;
+    }
+    
+    [data-testid="stMainBlockContainer"] {
+        position: relative;
+        z-index: 2;
     }
     
     /* Hide the top toolbar strip */
