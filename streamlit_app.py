@@ -36,13 +36,10 @@ st.set_page_config(
 if st.session_state.theme == 'dark':
     st.markdown("""
 <style>
-    /* Professional industrial machinery background - DARK THEME */
+    /* Professional industrial gradient background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(rgba(10, 10, 10, 0.6), rgba(20, 20, 40, 0.6)), url('https://images.unsplash.com/photo-1513665641917-a6ba36818fe2?w=2000&q=80');
-        background-size: cover;
-        background-position: center;
+        background: linear-gradient(135deg, #0a0f1f 0%, #1a2a4a 25%, #0d1628 50%, #1a3a5a 75%, #0a0f1f 100%);
         background-attachment: fixed;
-        background-repeat: no-repeat;
         min-height: 100vh;
         padding-top: 0 !important;
         margin-top: 0 !important;
