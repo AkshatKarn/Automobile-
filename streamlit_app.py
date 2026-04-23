@@ -38,19 +38,10 @@ if st.session_state.theme == 'dark':
 <style>
     /* Professional warehouse background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #0f1428 50%, #1a1f3a 75%, #0a0e27 100%);
-        background-attachment: fixed;
-        background-size: 400% 400%;
+        background: linear-gradient(180deg, #001a4d 0%, #003d99 25%, #001a4d 50%, #003d99 75%, #001a4d 100%);
         min-height: 100vh;
         padding-top: 0 !important;
         margin-top: 0 !important;
-        animation: gradientShift 15s ease infinite;
-    }
-    
-    @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
     }
     
     /* Hide the top toolbar strip */
