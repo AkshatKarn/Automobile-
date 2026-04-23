@@ -36,17 +36,21 @@ st.set_page_config(
 if st.session_state.theme == 'dark':
     st.markdown("""
 <style>
-    /* Professional industrial factory floor background - DARK THEME */
+    /* Professional warehouse background - DARK THEME */
     [data-testid="stAppViewContainer"] {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
-                          url('https://images.unsplash.com/photo-1543269865-cbdf26effbad?w=2000&q=80');
-        background-size: cover;
-        background-position: center;
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #0f1428 50%, #1a1f3a 75%, #0a0e27 100%);
         background-attachment: fixed;
-        background-repeat: no-repeat;
+        background-size: 400% 400%;
         min-height: 100vh;
         padding-top: 0 !important;
         margin-top: 0 !important;
+        animation: gradientShift 15s ease infinite;
+    }
+    
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
     
     /* Hide the top toolbar strip */
